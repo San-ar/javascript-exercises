@@ -1,31 +1,12 @@
-const removeFromArray = function(text) {
-    let startIndex;
-    let endIndex;
-    let newArray;
-    
-    for (let i = 0; i < text.length; i++){
-        if (text[i] == "[") {
-            startIndex = i;
-        }
-        if (text[i] == "]") {
-            endIndex = i;
-        }
-    }
+const removeFromArray = function (array, ...args) {
 
-    for (let i = 0; i < endIndex; i++){
-        newArray = newArray.push(text[i]);
-    }
-    // let requiredString = text.slice(startIndex + 1, endIndex);
-    
-    // let trimmedString = requiredString.replaceAll(/\s+/g, "");
-    // console.log(trimmedString);
-    
-    // stringArray = trimmedString.split(",");
-    // console.log(stringArray);
-    
-    // let numberArray = stringArray.map(Number);
+    const newArray = [];
 
-    // for ()
+    array.forEach((item) => {
+        if (!args.includes(item)) {
+            newArray.push(item);
+        }
+    });
     return newArray;
 };
 
